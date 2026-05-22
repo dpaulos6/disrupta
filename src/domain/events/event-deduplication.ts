@@ -1,0 +1,1 @@
+export function dedupeKey(input: {title:string; municipality?:string; startsAt:string}) {return `${input.title.trim().toLowerCase()}::${input.municipality?.trim().toLowerCase() ?? 'na'}::${new Date(input.startsAt).toISOString().slice(0,10)}`;}

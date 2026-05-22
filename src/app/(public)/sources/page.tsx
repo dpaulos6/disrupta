@@ -1,0 +1,4 @@
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import { listSources } from '@/server/db/queries/sources';
+export default async function SourcesPage(){ const rows = await listSources(); return <main className='mx-auto max-w-5xl p-8'><Card><CardHeader><CardTitle>Sources</CardTitle></CardHeader><CardContent><Table><TableHeader><TableRow><TableHead>Name</TableHead><TableHead>Type</TableHead><TableHead>Adapter</TableHead></TableRow></TableHeader><TableBody>{rows.map((s)=><TableRow key={s.id}><TableCell><a href={s.url} className='underline'>{s.name}</a></TableCell><TableCell>{s.type}</TableCell><TableCell>{s.adapterKey}</TableCell></TableRow>)}</TableBody></Table></CardContent></Card></main>; }
