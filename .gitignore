@@ -1,0 +1,30 @@
+# Dependencies and package-manager cache
+node_modules/
+.pnpm-store/
+
+# Build output and caches
+.next/
+out/
+dist/
+*.tsbuildinfo
+
+# Test output
+coverage/
+playwright-report/
+test-results/
+
+# Local environment configuration (keep documented examples)
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Local deployment metadata
+.vercel/
+
+# Logs
+*.log
+
+# Operating-system files
+.DS_Store
+Thumbs.db
